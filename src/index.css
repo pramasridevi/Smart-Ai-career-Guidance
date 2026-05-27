@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,900;1,900&family=JetBrains+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-[#020617] text-slate-100 antialiased;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+.frosted-bg {
+  @apply relative overflow-hidden bg-[#020617];
+}
+
+.mesh-gradient-1 {
+  @apply absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-indigo-600/20 rounded-full blur-[120px] pointer-events-none;
+}
+
+.mesh-gradient-2 {
+  @apply absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-emerald-600/20 rounded-full blur-[120px] pointer-events-none;
+}
+
+.mesh-gradient-3 {
+  @apply absolute top-[20%] right-[10%] w-[30%] h-[40%] bg-purple-600/10 rounded-full blur-[100px] pointer-events-none;
+}
+
+.glass-panel {
+  @apply bg-white/5 backdrop-blur-md border border-white/10;
+}
+
+.glass-panel-heavy {
+  @apply bg-white/5 backdrop-blur-xl border border-white/10;
+}
